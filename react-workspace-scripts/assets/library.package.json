@@ -1,0 +1,15 @@
+{
+  "name": "LibName",
+  "version": "1.0.0",
+  "main": "lib/LibName.js",
+  "scripts": {
+    "start": "babel src/ --source-maps --out-dir lib/ --watch",
+    "build": "babel src/ --source-maps --out-dir lib/"
+  },
+  "dependencies": {
+    "react": "^15.5.4",
+    "react-dom": "^15.5.4",
+    "react-native": "^0.44.0",
+    "react-native-web": "0.0.94"
+  }
+}

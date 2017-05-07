@@ -1,0 +1,11 @@
+{
+  "name": "react-workspace-scripts",
+  "version": "1.0.0-alpha.0",
+  "bin": {
+    "react-workspace-scripts": "./bin/cli.js"
+  },
+  "dependencies": {
+    "create-react-app": "^1.3.0",
+    "react-native-cli": "^2.0.1"
+  }
+}
