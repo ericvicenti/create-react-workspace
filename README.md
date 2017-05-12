@@ -4,7 +4,7 @@ Develop and share code between react web apps, react native apps, and standalone
 
 > Warning: This is a super early alpha and anything could break. Please provide feedback and consider jumping into the code and contributing!
 
-Under the hood, this uses create-react-app, haul, lerna, and react-native-cli, although the dependencies may change over time.
+Under the hood, this uses create-react-app, haul, lerna, and react-native-cli, although the dependencies may change over time. Currently we encourage yarn but also support npm.
 
 ## Create a new workspace
 
@@ -38,7 +38,7 @@ npm start my-web-app
 ```
 npm run create-native-app my-native-app
 # The app will be created in my-native-app
-cd mynativeapp
+cd my-native-app
 npm run ios
 npm run android
 ```
