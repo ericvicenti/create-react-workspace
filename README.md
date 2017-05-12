@@ -36,9 +36,9 @@ npm start my-web-app
 ## Create a native app
 
 ```
-npm run create-native-app MyNativeApp
+npm run create-native-app my-native-app
 # The app will be created in my-native-app
-cd mynativeapp
+cd my-native-app
 npm run ios
 npm run android
 ```
@@ -58,7 +58,7 @@ npm start my-native-app
 If you want to share logic or components between several apps, you can create a library and optionally publish it to npm.
 
 ```
-npm run create-library MyLibrary
+npm run create-library my-library
 # The library will be created in ~/dev/my-library
 ```
 
