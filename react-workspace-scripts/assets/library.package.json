@@ -1,6 +1,6 @@
 {
   "name": "lib-name",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "main": "lib/LibName.js",
   "scripts": {
     "start": "babel src/ --source-maps --out-dir lib/ --watch",

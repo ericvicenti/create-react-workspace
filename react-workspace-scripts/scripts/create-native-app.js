@@ -50,6 +50,9 @@ module.exports = function(args) {
     appPackage.scripts.ios = "RCT_NO_LAUNCH_PACKAGER=true react-native run-ios";
     appPackage.scripts.android = "RCT_NO_LAUNCH_PACKAGER=true react-native run-android";
     fs.writeFileSync(appPackagePath, JSON.stringify(appPackage, null, 2));
+    const gitignorePath = join(appDir, '.gitignore');
+    const gitignoreFile = fs.readFileSync(gitignorePath, {encoding: 'utf8'}) + '\n\n.happypack\n';
+    fs.writeFileSync(gitignorePath, gitignoreFile);
     spawn(utils.npmCommandToUse, ['install'], { cwd: appDir }).on("exit", function() {
       execFileSync('mv', [ appDir, appFinalDir ]);
       utils.addToLerna(appModuleName);
