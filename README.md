@@ -1,6 +1,6 @@
 # Create React Workspace
 
-Develop and share code between react web apps, react native apps, and standalone libraries.
+Develop and share code between React web apps, React Native apps, and standalone libraries/components.
 
 > Warning: This is a super early alpha and anything could break. Please provide feedback and consider jumping into the code and contributing!
 
