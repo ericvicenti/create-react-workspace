@@ -10,7 +10,7 @@ export default class LibName extends Component {
     return (
       <View>
         <Text>
-          Hello, I am a new component. Edit me in LibName/src/LibName.js
+          Hello, I am a new component. Edit me in lib-name/src/LibName.js
         </Text>
       </View>
     );

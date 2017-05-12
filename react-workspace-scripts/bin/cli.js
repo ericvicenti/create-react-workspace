@@ -12,6 +12,10 @@ switch (command) {
     return require('../scripts/create-web-app')(args);
   case "create-native-app":
     return require('../scripts/create-native-app')(args);
+  case "ios":
+    return require('../scripts/ios')(args);
+  case "android":
+    return require('../scripts/android')(args);
   case "create-library":
     return require('../scripts/create-library')(args);
   case "upgrade":

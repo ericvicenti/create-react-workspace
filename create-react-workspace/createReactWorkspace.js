@@ -94,13 +94,13 @@ const program = new commander.Command(packageJson.name)
   .parse(process.argv);
 
 if (typeof projectName === 'undefined') {
-  console.error('Please specify the project directory:');
+  console.error('Please specify the workpace directory:');
   console.log(
-    `  ${chalk.cyan(program.name())} ${chalk.green('<project-directory>')}`
+    `  ${chalk.cyan(program.name())} ${chalk.green('<workspace-directory>')}`
   );
   console.log();
   console.log('For example:');
-  console.log(`  ${chalk.cyan(program.name())} ${chalk.green('my-react-app')}`);
+  console.log(`  ${chalk.cyan(program.name())} ${chalk.green('my-dev-repo')}`);
   console.log();
   console.log(
     `Run ${chalk.cyan(`${program.name()} --help`)} to see all options.`
@@ -145,7 +145,7 @@ function createApp(name, verbose, version, template) {
     process.exit(1);
   }
 
-  console.log(`Creating a new React app in ${chalk.green(root)}.`);
+  console.log(`Creating a new React workspace in ${chalk.green(root)}.`);
   console.log();
 
   const packageJson = {

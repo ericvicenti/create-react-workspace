@@ -2,6 +2,11 @@ var fs = require('fs');
 var path = require('path');
 var scriptsPkgJSON = require('../package.json');
 var execFileSync = require('child_process').execFileSync;
+var utils = require('../utils');
+
+function stringify(data) {
+  return JSON.stringify(data, null, 2);
+}
 
 module.exports = function(root, workspaceName, verbose, originalDirectory, template) {
 
@@ -51,29 +56,26 @@ module.exports = function(root, workspaceName, verbose, originalDirectory, templ
       "start": "react-workspace-scripts start",
       "create-web-app": "react-workspace-scripts create-web-app",
       "create-native-app": "react-workspace-scripts create-native-app",
+      "ios": "react-workspace-scripts ios",
+      "android": "react-workspace-scripts android",
       "create-library": "react-workspace-scripts create-library",
       "eject": "react-workspace-scripts eject"
     }
   };
   var lernaJSON =  {
     "lerna": "2.0.0-beta.38",
-    "packages": [
-    ],
-    // "npmClient": "yarn",
+    "packages": [],
+    "npmClient": utils.npmCommandToUse,
     "version": "0.0.0"
   };
-
-  function stringify(data) {
-    return JSON.stringify(data, null, 2);
-  }
   fs.writeFileSync(path.join(root, '.babelrc'), stringify(babelRC));
   fs.writeFileSync(path.join(root, '.gitignore'), '.DS_Store\nnode_modules\nnpm-debug.log');
   fs.writeFileSync(path.join(root, 'lerna.json'), stringify(lernaJSON));
   fs.writeFileSync(path.join(root, 'package.json'), stringify(packageJSON));
-  execFileSync('npm', ['install'], {
+  execFileSync(utils.npmCommandToUse, ['install'], {
     cwd: root,
     stdio: 'inherit',
-  })
+  });
 
-  console.log('running init ', { root: root, workspaceName: workspaceName, verbose: verbose, originalDirectory: originalDirectory, template: template, })
+  console.log('Workspace initialized! ');
 }

@@ -37,6 +37,17 @@ module.exports = function(args) {
 
   console.log("Starting " + packagesToStart.join() + " from " + cwd);
 
+  packagesToStart.forEach(packageName => {
+    var clearConsoleFile = join(cwd, packageName, 'node_modules', 'react-dev-utils', 'clearConsole.js');
+    if (fs.existsSync(clearConsoleFile)) {
+      fs.writeFileSync(clearConsoleFile, 'module.exports = function() {};');
+    }
+    var clearConsoleFile2 = join(cwd, packageName, 'node_modules', 'clear', 'index.js');
+    if (fs.existsSync(clearConsoleFile2)) {
+      fs.writeFileSync(clearConsoleFile2, 'module.exports = function() {};');
+    }
+  });
+
   var children = packagesToStart.map(packageName =>
     spawn("npm", ["start"], {
       cwd: join(cwd, packageName),
