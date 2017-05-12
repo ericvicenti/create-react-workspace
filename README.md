@@ -19,7 +19,7 @@ cd dev
 ## Create a web app
 
 ```
-npm run create-web-app MyWebApp
+npm run create-web-app my-web-app
 # The app will be created in ~/dev/my-web-app
 ```
 
@@ -36,7 +36,7 @@ npm start my-web-app
 ## Create a native app
 
 ```
-npm run create-native-app MyNativeApp
+npm run create-native-app my-native-app
 # The app will be created in my-native-app
 cd mynativeapp
 npm run ios
@@ -55,10 +55,10 @@ npm start my-native-app
 
 ## Create a local library for shared code
 
-If you want to share logic or components between several apps, you can create a library and optionally publish it to npm.
+If you want to share JS logic or components between several apps:
 
 ```
-npm run create-library MyLibrary
+npm run create-library my-library
 # The library will be created in ~/dev/my-library
 ```
 
@@ -91,13 +91,26 @@ npm start my-native-app my-web-app
 # both apps will start, and they will handle changes from my-library any other local dependencies!
 ```
 
-## Coming soon (help wanted!)
+## Help Wanted!
 
-- Eject
-- Upgrade
+Submit an issue to let us know what you're up to, and get to work! The following improvements would be rapidly accepted:
+
 - Windows support
 - Jest tests
 - Prettier
 - Flow
+- Eject ala create-react-app
+- Upgrade ala create-react-app
+- Refactor: directly integrate with create-react-app and react-native-init
+- Support create-react-native-app. Blocked by current usage of Haul
+- Upgrade to RN 0.44. Blocked by brokenness of Haul on Android
 - e2e tests for the workspace
 - Improved errors and docs
+- Split out create-library and create-component
+- Add storybook support to create-component
+
+These roadmap items are more complicated, so please open issues to discuss:
+
+- Switch to react-primitives for library dependency, rather than react-dom+react-native+react-native-web
+- Either improve integration of haul/webpack for React Native, or use the React Native packager for symlinks+web
+- Support publishing and release workflows
