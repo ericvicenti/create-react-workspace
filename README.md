@@ -34,6 +34,12 @@ npm start my-web-app
 ```
 
 ## Create a native app
+##### pre-requirements:
+you should have installed `react-native-cli` in advance. if you don't have you can easly install by 
+```
+npm install -g react-native-cli
+```
+
 
 ```
 npm run create-native-app my-native-app
